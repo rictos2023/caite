@@ -10,8 +10,13 @@
       text-align: center;
       margin-top: 50px;
     }
-    #nao-btn {
+    .btn-container {
       position: relative;
+      display: inline-block;
+    }
+    #nao-btn {
+      position: absolute;
+      left: 0;
     }
     #nao-btn:hover {
       left: 20px;
@@ -21,8 +26,10 @@
 <body>
   <div class="container">
     <h2>Quer namorar comigo?</h2>
-    <button type="button" class="btn btn-pink">Sim</button>
-    <button type="button" id="nao-btn" class="btn btn-red">Não</button>
+    <div class="btn-container">
+      <button type="button" class="btn btn-pink" id="sim-btn">Sim</button>
+      <button type="button" id="nao-btn" class="btn btn-red">Não</button>
+    </div>
     <br><br>
     <div id="video-container"></div>
   </div>
@@ -32,11 +39,11 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function(){
-      $('#nao-btn').click(function(){
+      $('#sim-btn').click(function(){
         $('#video-container').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
       });
 
-      $('#nao-btn').on('touchstart', function(){
+      $('#sim-btn').on('touchstart', function(){
         $('#video-container').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
       });
     });
