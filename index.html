@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quer namorar comigo?</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    #nao-btn {
+      position: relative;
+    }
+    #nao-btn:hover {
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Quer namorar comigo?</h2>
+    <button type="button" class="btn btn-pink">Sim</button>
+    <button type="button" id="nao-btn" class="btn btn-red">Não</button>
+    <br><br>
+    <div id="video-container"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#nao-btn').click(function(){
+        $('#video-container').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+      });
+
+      $('#nao-btn').on('touchstart', function(){
+        $('#video-container').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+      });
+    });
+  </script>
+</body>
+</html>
