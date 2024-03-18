@@ -6,30 +6,30 @@
   <title>Quer namorar comigo?</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
+body { background-image: url('gatobrabo.png'); /* Substitua 'caminho/para/sua/imagem.jpg' pelo caminho da sua imagem */ background-size: cover; /* Para cobrir toda a área do corpo */ background-repeat: no-repeat; /* Para evitar a repetição da imagem */ }
     .container {
       text-align: center;
       margin-top: 50px;
     }
-    .btn-container {
-      position: relative;
-      display: inline-block;
+    #sim-btn {
+      margin-right: 10px;
     }
     #nao-btn {
-      position: absolute;
-      left: 0;
+      margin-left: 10px;
     }
-    #nao-btn:hover {
-      left: 20px;
-    }
+  #nao-btn {
+    position: relative;
+  }
+  #nao-btn:hover, #nao-btn:active {
+    left: 20px;
+  }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Quer namorar comigo?</h2>
-    <div class="btn-container">
-      <button type="button" class="btn btn-pink" id="sim-btn">Sim</button>
-      <button type="button" id="nao-btn" class="btn btn-red">Não</button>
-    </div>
+    <h2>Eres Gay?</h2>
+    <button type="button" class="btn btn-green" id="sim-btn">Sim</button>
+    <button type="button" id="nao-btn" class="btn btn-danger">Não</button>
     <br><br>
     <div id="video-container"></div>
   </div>
@@ -38,6 +38,15 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
+  function moveBotaoNao() {
+    var randomLeft = Math.floor(Math.random() * 200); // Valor aleatório para a posição left
+    var randomTop = Math.floor(Math.random() * 200); // Valor aleatório para a posição top
+    document.getElementById('nao-btn').style.left = randomLeft + 'px'; // Definir a nova posição left
+    document.getElementById('nao-btn').style.top = randomTop + 'px'; // Definir a nova posição top
+  }
+
+  document.getElementById('nao-btn').addEventListener('click', moveBotaoNao);
+
     $(document).ready(function(){
       $('#sim-btn').click(function(){
         $('#video-container').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
